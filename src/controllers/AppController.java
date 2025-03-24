@@ -1,18 +1,19 @@
 package controllers;
 
-import services.ProductServices;
-import services.UserService;
-import services.OrderService;
+import interfaces.IOrderService;
+import interfaces.IProductService;
+import interfaces.IUserService;
+
 
 public class AppController {
-    private ProductServices productService;
-    private UserService userService;
-    private OrderService orderService;
+    private final IProductService productService;
+    private final IUserService userService;
+    private final IOrderService orderService;
 
-    public AppController() {
-        this.productService = new ProductServices();
-        this.userService = new UserService();
-        this.orderService = new OrderService();
+    public AppController(IProductService productService, IUserService userService, IOrderService orderService) {
+        this.productService = productService;
+        this.userService = userService;
+        this.orderService = orderService;
     }
 
     public void showProducts() {
