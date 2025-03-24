@@ -15,6 +15,10 @@ public class UserService {
         users.add(new User(2, "gnctrkcll","g@example.com","password321"));
     }
 
+    public List<User> getAllUsers() {
+        return users;
+    }
+
     public User getUserById(int id) {
         return users
                 .stream()
